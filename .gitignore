@@ -1,0 +1,13 @@
+# Visual Studo 2015 cache/options directory
+.vs/
+
+
+*.png
+*.jpg
+*.mp4
+*.mov
+*.webm
+*.ico
+*.svg
+*.ttf
+*.pdf
