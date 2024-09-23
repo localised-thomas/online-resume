@@ -27,13 +27,6 @@
     --spacing-large: 4rem;
 }
 
-/* 
-    Just a quick note for anyone having a peek through my CSS file:
-    While working on a project I would typically favour creating reusable semantic css classes over
-    content-specific, tightly coupled ids. As this is a small, single page I opted for ease
-    of maintence over scalability in the event I return to make minor tweaks
-*/
-
 @font-face {
     font-family: 'NunitoSans';
     src: url('assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('woff2');
@@ -93,17 +86,6 @@ footer {
 }
 
 /* Styles */
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    display: inline-block;
-    font-size: var(--font-regular);
-}
 
 .avatar {
     height: 4rem;
@@ -177,6 +159,12 @@ header img {
     padding: 0rem;
 }
 
+#skills ul, #contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 #skills-list img {
     height: var(--font-large);
     border-bottom: 1px dashed;
@@ -198,38 +186,47 @@ header img {
 .skills-group li {
     display: block;
     margin-bottom: var(--spacing-x-small);
+    font-size: var(--font-regular);
 }
 
-#markup {
+.markup {
     color: var(--colour-pastel-red);
+    border-color: var(--colour-pastel-red);
 }
 
-#code {
+.code {
     color: var(--colour-pastel-green);
+    border-color: var(--colour-pastel-green);
 }
 
-#framework {
+.framework {
     color: var(--colour-pastel-pink);
+    border-color: var(--colour-pastel-pink);
 }
 
-#database {
+.database {
     color: var(--colour-pastel-red);
+    border-color: var(--colour-pastel-red);
 }
 
-#source-control {
+.source-control {
     color: var(--colour-pastel-blue);
+    border-color: var(--colour-pastel-blue);
 }
 
-#design {
+.design {
     color: var(--colour-pastel-orange);
+    border-color: var(--colour-pastel-orange);
 }
 
-#application {
+.application {
     color: var(--colour-pastel-blue);
+    border-color: var(--colour-pastel-blue);
 }
 
-#personal-skills {
+.personal-skills {
     color: var(--colour-pastel-yellow);
+    border-color: var(--colour-pastel-yellow);
 }
 
 #professional-experience {
@@ -243,6 +240,21 @@ header img {
     border-top: 1px solid color(srgb 0.4259 0.4839 0.51);
 }
 
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chips span {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px dashed;
+}
+
+#uni-experience {
+    margin-bottom: 1rem;
+}
+
 .experience {
     width: calc(100% - 6rem);
     margin: 0 var(--spacing-small) var(--spacing-small) var(--spacing-small);
@@ -254,6 +266,10 @@ header img {
 
 .experience:last-of-type {
     margin-bottom: 0;
+}
+
+.experience ul {
+    list-style-type: square;
 }
 
 .experience small {
