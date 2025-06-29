@@ -27,6 +27,13 @@
     --spacing-large: 4rem;
 }
 
+/* 
+    Just a quick note for anyone having a peek through my CSS file:
+    While working on a project I would typically favour creating reusable semantic css classes over
+    content-specific, tightly coupled ids. As this is a small, single page I opted for ease
+    of maintence over scalability in the event I return to make minor tweaks
+*/
+
 @font-face {
     font-family: 'NunitoSans';
     src: url('assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('woff2');
@@ -38,7 +45,6 @@
 /* Page Elements */
 
 html, body {
-    height: 100%;
     width: 100%;
     margin: 0;
     font-size: 16px;
@@ -48,17 +54,14 @@ html, body {
 
 header {
     display: flex;
-    flex-direction: column;
     top: 0;
     left: 0;
     z-index: 1;
     align-items: center;
-    width: 100%;
+    width: auto;
     font-size: var(--font-regular);
-    padding: var(--spacing-regular);
-    padding-bottom: 0;
+    margin: var(--spacing-regular);
     margin-bottom: 0;
-    box-sizing: border-box;
 }
 
 section {
@@ -77,7 +80,7 @@ section {
 }
 
 footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -86,6 +89,17 @@ footer {
 }
 
 /* Styles */
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: var(--font-regular);
+}
 
 .avatar {
     height: 4rem;
@@ -130,19 +144,16 @@ header img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#header-link {
-    display: none;
+    margin-left: var(--spacing-regular);
 }
 
 #skills {
     display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex: 1;
-    height: 100vh;
     min-height: calc(100vh - 9rem);
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: auto;
     width: 100%;
 }
 
@@ -157,12 +168,6 @@ header img {
     margin: var(--spacing-small);
     margin-top: 0;
     padding: 0rem;
-}
-
-#skills ul, #contact ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 #skills-list img {
@@ -186,47 +191,38 @@ header img {
 .skills-group li {
     display: block;
     margin-bottom: var(--spacing-x-small);
-    font-size: var(--font-regular);
 }
 
-.markup {
+#markup {
     color: var(--colour-pastel-red);
-    border-color: var(--colour-pastel-red);
 }
 
-.code {
+#code {
     color: var(--colour-pastel-green);
-    border-color: var(--colour-pastel-green);
 }
 
-.framework {
+#framework {
     color: var(--colour-pastel-pink);
-    border-color: var(--colour-pastel-pink);
 }
 
-.database {
+#database {
     color: var(--colour-pastel-red);
-    border-color: var(--colour-pastel-red);
 }
 
-.source-control {
+#source-control {
     color: var(--colour-pastel-blue);
-    border-color: var(--colour-pastel-blue);
 }
 
-.design {
+#design {
     color: var(--colour-pastel-orange);
-    border-color: var(--colour-pastel-orange);
 }
 
-.application {
+#application {
     color: var(--colour-pastel-blue);
-    border-color: var(--colour-pastel-blue);
 }
 
-.personal-skills {
+#personal-skills {
     color: var(--colour-pastel-yellow);
-    border-color: var(--colour-pastel-yellow);
 }
 
 #professional-experience {
@@ -240,21 +236,6 @@ header img {
     border-top: 1px solid color(srgb 0.4259 0.4839 0.51);
 }
 
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.chips span {
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px dashed;
-}
-
-#uni-experience {
-    margin-bottom: 1rem;
-}
-
 .experience {
     width: calc(100% - 6rem);
     margin: 0 var(--spacing-small) var(--spacing-small) var(--spacing-small);
@@ -266,10 +247,6 @@ header img {
 
 .experience:last-of-type {
     margin-bottom: 0;
-}
-
-.experience ul {
-    list-style-type: square;
 }
 
 .experience small {
@@ -340,7 +317,7 @@ header img {
     width: 100%;
 }
 
-.outline-button {
+#contact-list li {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -351,11 +328,11 @@ header img {
     transition: background 100ms linear;
 }
 
-.outline-button:last-of-type {
+#contact-list li:last-of-type {
     margin-bottom: 0;
 }
 
-.outline-button a {
+#contact-list a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,50 +341,50 @@ header img {
     width: 100%;
 }
 
-.outline-button img {
+#contact-list li img {
     height: var(--font-regular);
     margin-right: var(--spacing-x-small);
 }
 
-.outline-button:nth-of-type(1) a {
+#contact-list li:nth-of-type(1) a {
     color: var(--colour-pastel-blue);   
 }
-.outline-button:nth-of-type(2) a {
+#contact-list li:nth-of-type(2) a {
     color: var(--colour-pastel-green);  
 }
-.outline-button:nth-of-type(3) a {
+#contact-list li:nth-of-type(3) a {
     color: var(--colour-pastel-pink);   
 }
 
-.outline-button:nth-of-type(1) {
+#contact-list li:nth-of-type(1) {
     border: 1px solid var(--colour-pastel-blue);    
 }
-.outline-button:nth-of-type(2) {
+#contact-list li:nth-of-type(2) {
     border: 1px solid var(--colour-pastel-green);   
 }
-.outline-button:nth-of-type(3) {
+#contact-list li:nth-of-type(3) {
     border: 1px solid var(--colour-pastel-pink);    
 }
 
-.outline-button:nth-of-type(1):hover {
+#contact-list li:nth-of-type(1):hover {
     background: rgb(237 242 255 / 20%); 
 }
-.outline-button:nth-of-type(2):hover {
+#contact-list li:nth-of-type(2):hover {
     background: rgb(237 255 241 / 20%); 
 }
-.outline-button:nth-of-type(3):hover {
+#contact-list li:nth-of-type(3):hover {
     background: rgb(255 237 253 / 20%); 
 }
 
-.outline-button:nth-of-type(1):active {
+#contact-list li:nth-of-type(1):active {
     background: rgb(237 242 255 / 60%); 
     border: 1px solid var(--colour-primary-font);
 }
-.outline-button:nth-of-type(2):active {
+#contact-list li:nth-of-type(2):active {
     background: rgb(237 255 241 / 60%); 
     border: 1px solid var(--colour-primary-font);    
 }
-.outline-button:nth-of-type(3):active {
+#contact-list li:nth-of-type(3):active {
     background: rgb(255 237 253 / 60%); 
     border: 1px solid var(--colour-primary-font);    
 }
@@ -467,13 +444,7 @@ nav a:active {
 
 /* Breakpoints */
 
-@media screen and (min-width: 650px) {
-    header {
-        position: absolute;
-        flex-direction: row;
-        padding-bottom: var(--spacing-regular);
-    }
-
+@media screen and (min-width: 550px) {
     .avatar {
         height: 5rem;
         width: 5rem;
@@ -481,24 +452,6 @@ nav a:active {
 
     header h2 {
         font-size: var(--font-regular);
-    }
-
-    #header-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: var(--spacing-regular);
-    }
-
-    #header-link {
-        display: flex;
-        font-size: var(--font-regular);
-        margin-left: auto;
-    }
-
-    #skills {
-        min-height: auto;
-        align-items: center;
     }
 
     .skills-group {
@@ -575,7 +528,7 @@ nav a:active {
         font-size: var(--font-small);
     }
 
-    .outline-button img {
+    #contact-list li img {
         height: var(--font-small);
     }
 }
@@ -601,6 +554,7 @@ nav a:active {
 
     #skills {
         display: flex;
+        height: 100vh;
     }
 
     #skills-list {
@@ -623,45 +577,17 @@ nav a:active {
     }
 }
 
-@media screen and (min-width: 1680px) {
-    .skills-group {
-        padding: var(--spacing-regular);
-    }
-}
-
-@media screen and (max-height: 1150px) and (max-width: 1279px) {
-    #contact {
-        padding: 10rem 0;
+@media screen and (max-height: 800px) {
+    header {
+        position: static;
     }
 
     #skills {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        flex: 1;
         height: auto;
-        min-height: calc(100vh - 9rem);
-        width: 100%;
     }
 
-    header {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        align-items: center;
-        width: 100%;
-        font-size: var(--font-regular);
-        padding: var(--spacing-regular);
-        padding-bottom: 0;
-        margin-bottom: 0;
-        box-sizing: border-box;
-    }
-
-    #header-link {
-        display: none;
+    #contact {
+        padding: 10rem 0;
     }
 }
 
