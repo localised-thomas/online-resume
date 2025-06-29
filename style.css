@@ -329,6 +329,10 @@ header img {
     color: var(--colour-primary-font);
 }
 
+#about p:first-of-type {
+    margin-bottom: 1rem;
+}
+
 #contact-container {
     flex-direction: column;
     margin: var(--spacing-small);
